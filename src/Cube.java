@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Cube {
 
-    final int size;
+    public final int size;
 
     private final char[][][] value; //Хранит значение граней
 
@@ -226,7 +226,7 @@ public class Cube {
             for (int i = 0; i < size; i++) {
                 value[faces.get(names[0])][i][number] = temp[i];
             }
-            if (number == 0) this.turn("Left", (1 + direction) % 2);
+            if (number == 0) this.turn("Left", (direction) % 2);
             if (number == size - 1) this.turn("Right", (1 + direction) % 2);
         }
         if (recover != -1) this.rotateCube(recover % 6);
