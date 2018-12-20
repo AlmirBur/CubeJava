@@ -57,9 +57,7 @@ public class Cube {
             map.get('O') != num || map.get('B') != num || map.get('G') != num) throw new IllegalArgumentException();
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < size; j++) {
-                for (int k = 0; k < size; k++) {
-                    this.value[i][j][k] = value[i][j][k];
-                }
+                System.arraycopy(value[i][j], 0, this.value[i][j], 0, size);
             }
             faces.put(facesName[i], i);
         }
